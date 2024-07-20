@@ -21,10 +21,6 @@
 <body>
     <canvas class="c"></canvas>
     <div class="custom-cursor" id="customCursor"></div>
-    <div class="container">
-        <section class="section" id="section1">Section 1</section>
-        <section class="section" id="section2">Section 2</section>
-        <section class="section" id="section3">Section 3</section>
     </div>
     <div class="blob"></div>
     <script src="/js/script.js"></script>
@@ -33,43 +29,7 @@
    
    
     <script>
-       const c=document.querySelector('.c');
-       c.height=window.innerHeight;
-       c.width=window.innerWidth;
-       const context=c.getContext("2d")
-       const framc=80
-       
-        const curFram=(index)=>`./assets/nop/${(index + 1).toString()}.jpeg`;
-        
-        const imgs=[];
-        let box={frame:0};
-
-        for(let i=0;i<framc;i++){
-            const img=new Image();
-            img.src=curFram(i)
-            imgs.push(img)
-        }
-
-        gsap.to(box,{
-            frame:framc - 1,
-            snap:"frame",
-            ease:"none",
-            scrollTrigger:{
-                scrub:true,
-                pin:"canvas",
-                end:"500%",
-            },
-            onUpdate:render,
-        })
-
-        imgs[0].onload=render;
-
-        function render(){
-            context.clearRect(0,0,c.width,c.height)
-            context.drawImage(imgs[box.frame],0,0);
-
-        }
-
+     
 
     </script>
 </body>

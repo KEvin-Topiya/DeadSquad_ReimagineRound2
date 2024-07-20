@@ -1,22 +1,22 @@
 // script.js
 // -----------------------kevin-------------------------------
-document.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const blob = document.querySelector('.blob');
+// document.addEventListener('scroll', () => {
+//     const scrollY = window.scrollY;
+//     const blob = document.querySelector('.blob');
 
-    // Change the size of the blob based on scroll position
-    const size = 100 + (scrollY / 10);
-    blob.style.width = `${size}px`;
-    blob.style.height = `${size}px`;
+//     // Change the size of the blob based on scroll position
+//     const size = 100 + (scrollY / 10);
+//     blob.style.width = `${size}px`;
+//     blob.style.height = `${size}px`;
 
-    // Change the color of the blob based on scroll position
-    const color = `hsl(${scrollY / 5}, 100%, 50%)`;
-    blob.style.backgroundColor = color;
+//     // Change the color of the blob based on scroll position
+//     const color = `hsl(${scrollY / 5}, 100%, 50%)`;
+//     blob.style.backgroundColor = color;
 
-    // Change the shape of the blob (border-radius) based on scroll position
-    const borderRadius = 50 - (scrollY / 20);
-    blob.style.borderRadius = `${borderRadius}%`;
-});
+//     // Change the shape of the blob (border-radius) based on scroll position
+//     const borderRadius = 50 - (scrollY / 20);
+//     blob.style.borderRadius = `${borderRadius}%`;
+// });
 
 //  ---------------------------end kevin----------------------------
 
@@ -80,3 +80,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // /* ---------------------------end kishan---------------------------- */
+
+
+//            <-[ KEVIN ]->
+
+const c=document.querySelector('.c');
+c.height=window.innerHeight;
+c.width=window.innerWidth;
+const context=c.getContext("2d")
+const framc=80
+
+ const curFram=(index)=>`./assets/nop/${(index + 1).toString()}.jpeg`;
+ 
+ const imgs=[];
+ let box={frame:0};
+
+ for(let i=0;i<framc;i++){
+     const img=new Image();
+     img.src=curFram(i)
+     imgs.push(img)
+ }
+
+ gsap.to(box,{
+     frame:framc - 1,
+     snap:"frame",
+     ease:"none",
+     scrollTrigger:{
+         scrub:true,
+         pin:"canvas",
+         end:"500%",
+     },
+     onUpdate:render,
+ })
+
+ imgs[0].onload=render;
+
+ function render(){
+     context.clearRect(0,0,c.width,c.height)
+     context.drawImage(imgs[box.frame],0,0);
+
+ }
+
+//            <-[END | KEVIN ]-> 

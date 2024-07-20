@@ -3,88 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Everest Spices</title>
+    <title>EVEREST Loading Animation</title>
     <style>
-        body {
+        body, html {
+            height: 100%;
             margin: 0;
-            overflow: hidden;
-            cursor: none;
-            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-        .custom-cursor {
+        .container {
+            position: relative;
+            font-size: 5rem;
+            font-weight: bold;
+            color: transparent;
+            -webkit-text-stroke: 2px #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container::before {
+            content: 'EVEREST';
             position: absolute;
-            width: 32px;
-            height: 32px;
-            background: url('cursor.png') no-repeat center center;
-            background-size: contain;
-            pointer-events: none;
-            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 50px 50px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            animation: pourMasala 5s forwards;
+            -webkit-text-stroke: 0;
+            color:maroon;
+            background-clip: text;
+            -webkit-background-clip: text;
         }
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: #d2691e;
-            pointer-events: none;
-            opacity: 0;
-            animation: fade-out 1s forwards;
-        }
-        @keyframes fade-out {
-            to {
-                opacity: 0;
-                transform: translateY(-30px);
+        @keyframes pourMasala {
+            0% {
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+            100% {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
         }
     </style>
 </head>
 <body>
-    <div class="custom-cursor" id="customCursor"></div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const customCursor = document.getElementById('customCursor');
-
-            document.addEventListener('mousemove', (e) => {
-                customCursor.style.left = `${e.pageX}px`;
-                customCursor.style.top = `${e.pageY}px`;
-
-                createParticle(e.pageX, e.pageY);
-            });
-
-            document.addEventListener('click', (e) => {
-                for (let i = 0; i < 20; i++) {
-                    createParticle(e.pageX, e.pageY, true);
-                }
-            });
-
-            function createParticle(x, y, burst = false) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                document.body.appendChild(particle);
-
-                const size = Math.random() * 2 + 1;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-
-                const destinationX = (Math.random() - 0.5) * 60;
-                const destinationY = (Math.random() - 0.5) * 60;
-
-                particle.style.left = `${x}px`;
-                particle.style.top = `${y}px`;
-
-                const animation = particle.animate([
-                    { transform: `translate(${destinationX}px, ${destinationY}px)`, opacity: 1 },
-                    { transform: `translate(${destinationX}px, ${destinationY + 30}px)`, opacity: 0 }
-                ], {
-                    duration: burst ? 500 : 1000,
-                    easing: 'ease-out'
-                });
-
-                animation.onfinish = () => {
-                    particle.remove();
-                };
-            }
-        });
-    </script>
+    <div class="container">
+        EVEREST
+    </div>
 </body>
 </html>

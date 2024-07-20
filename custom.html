@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everest Spices</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            cursor: none;
+            background: #fff;
+        }
+        .custom-cursor {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('cursor.png') no-repeat center center;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #d2691e;
+            pointer-events: none;
+            opacity: 0;
+            animation: fade-out 1s forwards;
+        }
+        @keyframes fade-out {
+            to {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const customCursor = document.getElementById('customCursor');
+
+            document.addEventListener('mousemove', (e) => {
+                customCursor.style.left = `${e.pageX}px`;
+                customCursor.style.top = `${e.pageY}px`;
+
+                createParticle(e.pageX, e.pageY);
+            });
+
+            document.addEventListener('click', (e) => {
+                for (let i = 0; i < 20; i++) {
+                    createParticle(e.pageX, e.pageY, true);
+                }
+            });
+
+            function createParticle(x, y, burst = false) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                document.body.appendChild(particle);
+
+                const size = Math.random() * 2 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                const destinationX = (Math.random() - 0.5) * 60;
+                const destinationY = (Math.random() - 0.5) * 60;
+
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+
+                const animation = particle.animate([
+                    { transform: `translate(${destinationX}px, ${destinationY}px)`, opacity: 1 },
+                    { transform: `translate(${destinationX}px, ${destinationY + 30}px)`, opacity: 0 }
+                ], {
+                    duration: burst ? 500 : 1000,
+                    easing: 'ease-out'
+                });
+
+                animation.onfinish = () => {
+                    particle.remove();
+                };
+            }
+        });
+    </script>
+</body>
+</html>

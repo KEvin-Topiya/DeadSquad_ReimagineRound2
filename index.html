@@ -1,48 +1,68 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ariel</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="assets/logo/ariel_logo_big_resized (1).png" type="img/icon">
-</head>
-<body>
-    <nav class="flx jcsa">
-        <div class="logo">
-            <a href="#"><img src="./assets/logo/logo.png"></a>
-        </div>
-
-        <div class="menu ">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">HOME</a></li>
-            </ul>
-        </div>
-
-        <div class="mside">
-            <input type="text" name="search" placeholder="search...">
-        </div>
-    </nav>
-</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scrolling Animation with Blob</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .c{
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <section class="section" id="section1">Section 1</section>
-        <section class="section" id="section2">Section 2</section>
-        <section class="section" id="section3">Section 3</section>
-    </div>
-    <div class="blob"></div>
-    <script src="/js/script.js"></script>
+    <canvas class="c"></canvas>
+   
+   
+   
+   
+    <script>
+       const c=document.querySelector('.c');
+       c.height=window.innerHeight;
+       c.width=window.innerWidth;
+       const context=c.getContext("2d")
+       const framc=80
+       
+        const curFram=(index)=>`./assets/nop/${(index + 1).toString()}.jpeg`;
+        
+        const imgs=[];
+        let box={frame:0};
+
+        for(let i=0;i<framc;i++){
+            const img=new Image();
+            img.src=curFram(i)
+            imgs.push(img)
+        }
+
+        gsap.to(box,{
+            frame:framc - 1,
+            snap:"frame",
+            ease:"none",
+            scrollTrigger:{
+                scrub:true,
+                pin:"canvas",
+                end:"500%",
+            },
+            onUpdate:render,
+        })
+
+        imgs[0].onload=render;
+
+        function render(){
+            context.clearRect(0,0,c.width,c.height)
+            context.drawImage(imgs[box.frame],0,0);
+
+        }
+
+
+    </script>
 </body>
 </html>

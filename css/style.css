@@ -139,7 +139,12 @@
  .explore{
     position: absolute;
     z-index: 11;
-    bottom: 3%;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+ }
+ .mcanva{
+    position: relative; height: fit-content;
  }
 
  /* canvas end */

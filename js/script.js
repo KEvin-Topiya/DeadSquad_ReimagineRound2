@@ -112,13 +112,33 @@ const framc=80
      },
      onUpdate:render,
  })
+ ScrollTrigger.create({
+    trigger: ".mcanva",
+    start: "top top",
+    end: `bottom bottom`,
+    pin: "#explore",
+    pinSpacing: false
+});
 
- imgs[0].onload=render;
 
- function render(){
-     context.clearRect(0,0,c.width,c.height)
-     context.drawImage(imgs[box.frame],0,0);
 
- }
+imgs[0].onload=render;
 
-//            <-[END | KEVIN ]-> 
+function render(){
+    context.clearRect(0,0,c.width,c.height)
+    context.drawImage(imgs[box.frame],0,0);
+    
+}
+
+function scr(){
+    // gsap.to(window, {
+    //     scrollTo:4560,
+    //     duration:3,
+    //   });
+    window.scrollTo({
+        top: 4560,
+        behavior: 'smooth'
+      });
+}
+ 
+//            <-[END | KEVIN ]->    

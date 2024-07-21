@@ -1,46 +1,177 @@
- *{
-    margin: 0;
-    padding: 0;
-}
+ @font-face {
+     font-family: f1;
+     src: url(DMSerifDisplay-Regular.ttf);
+ }
 
-.flx{
-    display: flex;
-    align-items: center;
-}
-
-.jcsa{
-    justify-content: space-around;
-}
+ @font-face {
+     font-family: f2;
+     src: url(Prompt-Regular.ttf);
+ }
 
 
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: f2;
+ }
 
+ .flx {
+     display: flex;
+     align-items: center;
+ }
 
-/* ----------------------kishan----------------------------------- */
-.custom-cursor {
-    display: none;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-size: contain;
-    pointer-events: none;
-    z-index: 1000;
-    background-color: #ec7016;
-    border-radius: 50%;
-    opacity: 0.5;
-}
-.particle {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: #ec7016;
-    pointer-events: none;
-    opacity: 0;
-    animation: fade-out 1s forwards;
-    border-radius: 50%;
-}
-@keyframes fade-out {
-    to {
-        opacity: 0;
-        transform: translateY(-30px);
+ .jcsa {
+     justify-content: space-around;
+ }
+
+ .jcsb {
+     justify-content: space-between;
+ }
+ .jcse{justify-content: space-evenly;}
+
+ .c {
+     width: 100vw;
+     height: 100vh;
+ }
+
+ .Btn {
+     padding: 5vh;
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: flex-start;
+     width: 100px;
+     height: 40px;
+     border: none;
+     padding: 0px 20px;
+     background-color: #000;
+     color: white;
+     font-weight: 500;
+     cursor: pointer;
+     border-radius: 10px;
+     box-shadow: 5px 5px 0px rgb(2, 2, 2);
+     transition-duration: .3s;
+ }
+
+ .Btn i {
+     width: 13px;
+     position: absolute;
+     right: 0;
+     margin-right: 20px;
+     fill: white;
+     font-size: x-large;
+     transition-duration: .3s;
     }
-}
+    
+    .Btn:hover {
+        color: transparent;
+    }
+    
+    .Btn:hover i {
+        right: 43%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        transition-duration: .3s;
+        color: white    ;
+    }
+    
+    .Btn:active {
+        transform: translate(3px, 3px);
+     transition-duration: .3s;
+     box-shadow: 2px 2px 0px rgb(140, 32, 212);
+ }
+
+ /*-------- end KEvin --------------*/
+
+ /* nav */
+ nav {
+
+     background: rgba(0, 0, 0, 0.2);
+     -webkit-backdrop-filter: blur(5px);
+     padding: 3vh 10vh;
+     color: white !important;
+     position: fixed;
+     top: 0;
+     font-size: x-large;
+     left: 0;
+     width: 100%;
+     z-index: 11;
+ }
+
+ nav .menu {
+     display: flex;
+     gap: 10vh;
+     width: fit-content;
+ }
+
+ nav .menu li {
+     display: inline-block;
+     overflow: hidden;
+ }
+
+ nav .menu li a {
+    position: relative;
+     text-decoration: none;
+     color: white;
+     transition: 1s;
+    }
+    nav .menu li a::after {
+    transition: .5s;
+    left:-100%;
+    position: absolute;
+    content: '';
+    width: 100%;
+    bottom: 0;
+    border-bottom: 5px solid rgb(189, 2, 2);
+    }
+    nav .menu li  a:hover::after{
+        left:0px;
+    }
+
+
+ /* nav end */
+
+
+ /* canvas */
+
+ .explore{
+    position: absolute;
+    z-index: 11;
+    bottom: 3%;
+ }
+
+ /* canvas end */
+
+ /* ----------------------kishan----------------------------------- */
+ .custom-cursor {
+     display: none;
+     position: absolute;
+     width: 30px;
+     height: 30px;
+     background-size: contain;
+     pointer-events: none;
+     z-index: 1000;
+     background-color: #ec7016;
+     border-radius: 50%;
+     opacity: 0.5;
+ }
+
+ .particle {
+     position: absolute;
+     width: 2px;
+     height: 2px;
+     background: #ec7016;
+     pointer-events: none;
+     opacity: 0;
+     animation: fade-out 1s forwards;
+     border-radius: 50%;
+ }
+
+ @keyframes fade-out {
+     to {
+         opacity: 0;
+         transform: translateY(-30px);
+     }
+ }

@@ -28,7 +28,10 @@
  .jcsb {
      justify-content: space-between;
  }
- .jcse{justify-content: space-evenly;}
+
+ .jcse {
+     justify-content: space-evenly;
+ }
 
  .c {
      width: 100vw;
@@ -39,9 +42,10 @@
      padding: 5vh;
      position: relative;
      display: flex;
+     text-decoration: none;
      align-items: center;
      justify-content: flex-start;
-     width: 100px;
+     width: 110px;
      height: 40px;
      border: none;
      padding: 0px 20px;
@@ -62,23 +66,23 @@
      fill: white;
      font-size: x-large;
      transition-duration: .3s;
-    }
-    
-    .Btn:hover {
-        color: transparent;
-    }
-    
-    .Btn:hover i {
-        right: 43%;
-        margin: 0;
-        padding: 0;
-        border: none;
-        transition-duration: .3s;
-        color: white    ;
-    }
-    
-    .Btn:active {
-        transform: translate(3px, 3px);
+ }
+
+ .Btn:hover {
+     color: transparent;
+ }
+
+ .Btn:hover i {
+     right: 43%;
+     margin: 0;
+     padding: 0;
+     border: none;
+     transition-duration: .3s;
+     color: white;
+ }
+
+ .Btn:active {
+     transform: translate(3px, 3px);
      transition-duration: .3s;
      box-shadow: 2px 2px 0px rgb(140, 32, 212);
  }
@@ -97,6 +101,7 @@
      font-size: x-large;
      left: 0;
      width: 100%;
+     height: 10vh;
      z-index: 11;
  }
 
@@ -111,24 +116,31 @@
      overflow: hidden;
  }
 
+ .null {
+     height: 10vh;
+     width: 100%;
+ }
+
  nav .menu li a {
-    position: relative;
+     position: relative;
      text-decoration: none;
      color: white;
      transition: 1s;
-    }
-    nav .menu li a::after {
-    transition: .5s;
-    left:-100%;
-    position: absolute;
-    content: '';
-    width: 100%;
-    bottom: 0;
-    border-bottom: 5px solid rgb(189, 2, 2);
-    }
-    nav .menu li  a:hover::after{
-        left:0px;
-    }
+ }
+
+ nav .menu li a::after {
+     transition: .5s;
+     left: -100%;
+     position: absolute;
+     content: '';
+     width: 100%;
+     bottom: 0;
+     border-bottom: 5px solid rgb(189, 2, 2);
+ }
+
+ nav .menu li a:hover::after {
+     left: 0px;
+ }
 
 
  /* nav end */
@@ -136,18 +148,73 @@
 
  /* canvas */
 
- .explore{
-    position: absolute;
-    z-index: 11;
-    bottom: 4%;
-    left: 50%;
-    transform: translateX(-50%);
+ .explore {
+     position: absolute;
+     z-index: 11;
+     bottom: 4%;
+     left: 50%;
+     transform: translateX(-50%);
  }
- .mcanva{
-    position: relative; height: fit-content;
+
+ .mcanva {
+     position: relative;
+     height: fit-content;
  }
 
  /* canvas end */
+ /* banner */
+ #banner {
+     background-image: url(../assets/img/bg2.png);
+     background-repeat: repeat;
+
+     background-position: center;
+ }
+
+ /* banner end */
+
+ /* spices */
+ #Spices {
+     background-image: url(../assets/img/bg1.jpg);
+     background-size: 10%;
+     width: 100vw;
+     /* height:auto; */
+ }
+
+ .spic {
+     width: 100vw;
+ }
+
+ 
+ .spic .right{
+width: 35%;
+ }
+ .spic .left {
+    align-self: flex-start;
+     width: 60%;
+     margin-top: 10vh;
+     align-items: center;
+     height: 80vh;
+ }
+.spic .left h1{
+    margin-top: -5vh;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+    font-size: 15vh;
+}
+.spic .left p{
+    margin-top: 5vh;
+    text-align: center;
+    width: 80%;
+    font-size: x-large;
+}
+
+ .spic .right :nth-child(odd)  {
+     animation: scrolling 30s linear infinite;
+ }
+
+ .spic .right :nth-child(even)  {
+     animation: revscrolling 30s linear infinite;
+ }
+
 
  /* ----------------------kishan----------------------------------- */
  .custom-cursor {
@@ -178,5 +245,25 @@
      to {
          opacity: 0;
          transform: translateY(-30px);
+     }
+ }
+
+ @keyframes scrolling {
+     0% {
+         transform: translateY(0);
+     }
+
+     100% {
+         transform: translateY(-100vh);
+     }
+ }
+
+ @keyframes revscrolling {
+     0% {
+         transform: translateY(-50%);
+     }
+
+     100% {
+         transform: translateY(20%);
      }
  }

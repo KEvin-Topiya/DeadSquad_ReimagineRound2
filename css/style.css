@@ -312,15 +312,7 @@ width: 35%;
      }
  }
 
- @keyframes scrolling {
-    0% {
-        transform: translateX(100vw);
-    }
 
-    100% {
-        transform: translateX(-100vw);
-    }
-}
 @keyframes marque {
     0% {
         transform: translateX(100vw);

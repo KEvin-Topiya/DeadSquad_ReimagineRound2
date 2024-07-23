@@ -151,7 +151,7 @@ let load = setInterval(() => {
         clearInterval(load)
     }
 
-}, 5000);
+}, 3000);
 
 function stoploader() {
     const loader = document.querySelector('.loader')

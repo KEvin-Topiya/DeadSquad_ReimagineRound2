@@ -21,7 +21,7 @@
 //  ---------------------------end kevin----------------------------
 
 // -----------------------kishan----------------------------------
-
+document.onload=render()
 document.addEventListener('DOMContentLoaded', () => {
     const customCursor = document.getElementById('customCursor');
 

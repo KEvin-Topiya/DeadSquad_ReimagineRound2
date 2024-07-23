@@ -88,7 +88,28 @@
  }
 
  /*-------- end KEvin --------------*/
-
+/* loader */
+.load img {
+    height: 40vh;
+}
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    z-index: 12;
+    align-items: center;
+}
+.load {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    animation: scrolling 10s linear forwards;
+}
+/* end loader */
  /* nav */
  nav {
 
@@ -215,7 +236,30 @@ width: 35%;
      animation: revscrolling 30s linear infinite;
  }
 
+/* leader */
+.load img {
+    height: 40vh;
+}
 
+.loader {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+.load {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    animation: marque 10s linear infinite;
+}
+/* end loader */
  /* ----------------------kishan----------------------------------- */
  .custom-cursor {
      display: none;
@@ -267,3 +311,22 @@ width: 35%;
          transform: translateY(20%);
      }
  }
+
+ @keyframes scrolling {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+@keyframes marque {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(-100vw);
+    }
+}

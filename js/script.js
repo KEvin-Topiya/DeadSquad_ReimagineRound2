@@ -83,6 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //            <-[ KEVIN ]->
 
+
+
 const c=document.querySelector('.c');
 c.height=window.innerHeight;
 c.width=window.innerWidth;
@@ -141,6 +143,19 @@ function scr(){
 }
  
 
+// loder
 
+let load = setInterval(() => {
+    if (document.readyState == "complete") {
+        stoploader()
+        clearInterval(load)
+    }
+
+}, 5000);
+
+function stoploader() {
+    const loader = document.querySelector('.loader')
+    loader.style.display = "none"
+}
 
 //            <-[END | KEVIN ]->    

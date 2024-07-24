@@ -122,7 +122,6 @@ const framc=80
 });
 
 
-
 imgs[0].onload=render;
 
 function render(){

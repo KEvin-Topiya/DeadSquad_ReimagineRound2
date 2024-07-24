@@ -79,7 +79,7 @@ color:#fff
 .c {
 width:100vw;
 height:100vh;
-object-fit: contain
+/* object-fit: contain */
 }
 
 .custom-cursor {

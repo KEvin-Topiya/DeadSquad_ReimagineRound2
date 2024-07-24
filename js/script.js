@@ -132,10 +132,6 @@ function render(){
 }
 
 function scr(){
-    // gsap.to(window, {
-    //     scrollTo:4560,
-    //     duration:3,
-    //   });
     window.scrollTo({
         top: 4560,
         behavior: 'smooth'

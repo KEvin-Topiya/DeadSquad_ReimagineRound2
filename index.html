@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth; ;">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Everest</title>
+        <link rel="shortcut icon" href="assets/logo/cropped-favicon-new-32x32.jpg" type="image/x-icon">
+        <link rel="stylesheet" href="./css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body style="overflow-x: hidden;">
+        <div class="loader">
+            <div class="load">
+                <img src="assets/loader/train.gif">
+                <img src="assets/loader/image 18.png">
+                <img src="assets/loader/image 19.png">
+                <img src="assets/loader/image 20.png">
+                <img src="assets/loader/image 21.png">
+            </div>
+        </div>
+        
+        <nav class="flx jcsb">
+            <img src="assets/logo/everest-logo.svg">
+            <ul class="menu">
+                <li><a id="home" style="cursor: pointer;" onclick="scr();">Home</a></li>
+                <li><a href="#Spices">Spices</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contect us</a></li>
+            </ul>
+            <div class="follow flx jcsb" style="gap:2vh;">
+                <button class="Btn" role="button">Follow<i class="ri-instagram-fill "> </i></button>
+                <button class="Btn" role="button">Follow<i class="ri-facebook-fill "> </i></button>
+            </div>
+        </nav>
+        
+        
+        
+        <section class="mcanva">
+            <canvas class="c"> </canvas>
+            <a id="expbtn" href="#banner" class="Btn explore">Explore<i class="ri-arrow-drop-right-line"></i></a>
+        </section>
+        
+        <section id="banner" style=" overflow-y: hidden; height:100vh;">
+        </section>
+        <section id="explore" style="height:100vh;">
+            
+        </section>
+        
+        <section id="Spices" style="height: 100vh; overflow-y: hidden;">
+            <div class="spic flx ">
+                <div class="left flx">
+                    <center><h1>SPICES</h1>
+                        <p>India's spices are a symphony for the senses. From the earthy warmth of turmeric to the bright citrus zing of cardamom, each adds a unique note to a dish. These fragrant treasures transform simple ingredients into culinary masterpieces, while boasting health benefits that have been revered for centuries. A sprinkle of spice is all it takes to transport your taste buds on a vibrant journey through India.</p>
+                    </center>
+                </div>
+                <div class="right flx jcsa">
+                    <img src="assets/img/allspices1.png">
+                    <img src="assets/img/allspices3.png">
+                    <img src="assets/img/allspices3.png">
+                    <img src="assets/img/allspices4.png">
+                </div> 
+            </div>
+        </section>
+        
+        
+        <div style="height: 100vh;"></div>
+        <div style="height: 100vh;"></div>
+        <div style="height: 100vh;"></div>
+        <div style="height: 100vh;"></div>
+        
+        <div class="custom-cursor" id="customCursor"></div>
+    </div>
+    
+    
+    
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
+

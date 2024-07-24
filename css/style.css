@@ -289,11 +289,11 @@ transform:translateY(-100vh)
 
 @keyframes revscrolling {
 0% {
-transform:translateY(-50%)
+transform:translateY(-100vh)
 }
 
 100% {
-transform:translateY(20%)
+transform:translateY(0vh)
 }
 }
 

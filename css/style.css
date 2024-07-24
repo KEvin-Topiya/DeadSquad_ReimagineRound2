@@ -78,7 +78,8 @@ color:#fff
 
 .c {
 width:100vw;
-height:100vh
+height:100vh;
+object-fit: contain
 }
 
 .custom-cursor {
@@ -232,7 +233,7 @@ position:fixed;
 top:0;
 font-size:x-large;
 left:0;
-width:100%;
+width:100vw;
 height:10vh;
 z-index:11
 }

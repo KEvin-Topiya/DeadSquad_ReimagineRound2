@@ -127,7 +127,7 @@ imgs[0].onload=render;
 
 function render(){
     context.clearRect(0,0,c.width,c.height)
-    context.drawImage(imgs[box.frame],0,0);
+    context.drawImage(imgs[box.frame],0,0,c.width,c.height);
     
 }
 

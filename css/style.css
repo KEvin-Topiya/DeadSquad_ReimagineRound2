@@ -122,7 +122,7 @@
     font-size: x-large !important;
   }
   .flip-card-back p{
-    margin-top: 6vh !important;
+    margin-top: 3vh !important;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;

@@ -118,8 +118,15 @@
     transform: rotateY(180deg);
     border-radius: 10px;
   }
+  .flip-card-back h2{
+    font-size: x-large !important;
+  }
   .flip-card-back p{
-    margin-top: 0;
+    margin-top: 6vh !important;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 6;
     padding:0 3vh;
     width: 100% !important;
     font-size: medium !important;

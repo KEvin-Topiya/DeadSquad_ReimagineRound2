@@ -512,10 +512,10 @@ nav .menu li a:hover{
      /* Adjust vertical and horizontal margins */
 }
 .div-left{
-    margin-left:-9.2vw
+    margin-left: -100px;
 }
 .div-right{ 
-    margin-right: -7.2vw;
+    margin-right: -120px;
 }
 
 .div-right,

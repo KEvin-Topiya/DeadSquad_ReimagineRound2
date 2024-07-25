@@ -280,7 +280,6 @@
 }
 
 .loader {
-<<<<<<< HEAD
 position:fixed;
 top:0;
 left:0;
@@ -302,27 +301,6 @@ width:100vw;
 display:flex;
 align-items:center;
 overflow: hidden;
-=======
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    z-index: 12;
-    align-items: center
-}
-
-.loader {
-    background-color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center
->>>>>>> 89cfedf4b78e7107a7b7e3dd97c871feaa3b9a1d
 }
 
 .mcanva {

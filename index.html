@@ -14,6 +14,11 @@
                 padding: 0;
                 box-sizing: border-box;
             }
+            body,html{
+                height: 100%;
+                width: 100%;
+                /* overflow: hidden; */
+            }
             .c{
                 width: 100vw;
                 height: 100vh;
@@ -49,7 +54,7 @@
                 <li><a href="#Spices">Spices</a></li>
                 <li><a href="#">Products</a></li>
                 <li><a href="#">About us</a></li>
-                <li><a href="#">Contect us</a></li>
+                <li><a href="#">Contact us</a></li>
             </ul>
             <div class="follow flx jcsb" style="gap:2vh;">
                 <button class="Btn" role="button">Follow<i class="ri-instagram-fill "> </i></button>
@@ -119,7 +124,7 @@
             gsap.to(box,{
                 frame:framc - 1,
                 snap:"frame",
-                ease:"none",
+                
                 scrollTrigger:{
                     scrub:true,
                     pin:"canvas",

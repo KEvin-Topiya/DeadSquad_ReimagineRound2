@@ -58,10 +58,11 @@
     background-repeat: repeat;
     background-position: center;
     background-size: 100px;
+    
 }
 #nproducts h1 ,#products h1{
     
-    color: white;
+    color: black;
     /* margin-top: 5vh; */
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
     font-size: 8vh
@@ -97,6 +98,10 @@
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
+  }
+
+  section{
+    border-bottom: 1vh solid lightgrey;
   }
   
   .flip-card:hover .flip-card-inner {
@@ -140,7 +145,8 @@
 #products .pconteiner div div{
     height:25vh;
     width: 25vh;
-    margin: 5vh;
+    margin: 7vh;
+    
 }
 .hide{display: none !important;}
 .bs div,.ps div,.ts div,.other div{
@@ -154,10 +160,11 @@
 .other div{background-image: url(../assets/img/bg9.png);}
 .pconteiner{
     /* width: 90%; */
-    overflow: scroll;
+    /* overflow: scroll; */
     width:400vw !important;
-    height:70vh;
-    margin:5vh auto;
+    min-height:70vh;
+    margin:0 auto;
+
 }
 .pconteiner div{
     transition: 1s;
@@ -529,7 +536,7 @@ nav .menu li a:hover{
 }
 .content {
     display: none;
-    margin: 4vh;
+    margin: 0 40vh;
     align-items: center;
     justify-content: space-between;
 }
@@ -540,8 +547,9 @@ nav .menu li a:hover{
 }
 
 .image-content img {
-    width: 100px;
+    width: 200px;
     height: auto;
+    margin-right: 40vw;
 }
 
 

@@ -122,7 +122,6 @@ const framc=80
 });
 
 
-
 imgs[0].onload=render;
 
 function render(){
@@ -132,10 +131,6 @@ function render(){
 }
 
 function scr(){
-    // gsap.to(window, {
-    //     scrollTo:4560,
-    //     duration:3,
-    //   });
     window.scrollTo({
         top: 4560,
         behavior: 'smooth'
@@ -156,6 +151,13 @@ let load = setInterval(() => {
 function stoploader() {
     const loader = document.querySelector('.loader')
     loader.style.display = "none"
+}
+
+
+function scrollx(e){
+    console.log(e)
+const con=document.querySelector('.pconteiner')
+con.style.transform=`translateX(${e})`;
 }
 
 //            <-[END | KEVIN ]->    

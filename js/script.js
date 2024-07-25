@@ -153,4 +153,11 @@ function stoploader() {
     loader.style.display = "none"
 }
 
+
+function scrollx(e){
+    console.log(e)
+const con=document.querySelector('.pconteiner')
+con.style.transform=`translateX(${e})`;
+}
+
 //            <-[END | KEVIN ]->    

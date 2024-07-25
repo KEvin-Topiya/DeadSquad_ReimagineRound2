@@ -478,6 +478,10 @@ nav .menu li a:hover{
     position: relative;
 }
 
+.timeline h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+    font-size: 8vh;
+}
 .header {
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     font-family: Inria Serif, sans-serif;

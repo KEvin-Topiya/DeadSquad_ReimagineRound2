@@ -514,11 +514,6 @@ nav .menu li a:hover{
     margin-top: 1vh; /* Adjust top margin */
 }
 
-.year-right,
-.year-left {
-    font-family: Inria Serif, sans-serif;
-}
-
 @media (max-width: 991px) {
     .div-right,
     .div-left {

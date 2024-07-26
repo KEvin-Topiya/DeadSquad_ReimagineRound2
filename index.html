@@ -412,49 +412,7 @@
 
   <script src="js/script.js"></script>
   <script>
-    function fill(e) {
-        e.classList.remove("ri-heart-line")
-        e.classList.add("ri-heart-fill")
-        e.style.color = "red";
-    }
-    function fillr(e) {
-        e.style.color = "unset";
-        e.classList.remove("ri-heart-fill")
-        e.classList.add("ri-heart-line")
-    }
-    function tfill(e) {
-        if (e.classList.contains("ri-heart-line")) {
-            fill(e)
-        } else {
-            fillr(e)
-        }
-    }
-    
-    const mnu=document.querySelector(".menu");
 
-    function cls(){
-        mnu.style.left="-100%"
-    }
-    function menu() {
-        let micn=document.querySelector("#micn")
-        micn.classList.toggle("change");
-        
-        if(mnu.style.left=="0%" ){
-        cls();
-        }
-        else{
-        mnu.style.left="0%"
-        }  
-    }
-    function toggleContent(contentId) {
-        var contents = document.getElementsByClassName('content-section');
-        for (var i = 0; i < contents.length; i++) {
-            contents[i].style.display = 'none';
-    }
-
-    var content = document.getElementById(contentId);
-    content.style.display = 'flex';
-}
 </script>
 </body>
 
